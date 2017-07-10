@@ -1,0 +1,15 @@
+/*
+  INITIAL INDEX SCSS CONFIG
+  Find NewsFeed Watson
+  Author: JB
+  */
+
+/* utilities */
+@import 'utilities/reset';
+/* config */
+@import 'config/hex-colors';
+@import 'config/typography';
+/* Chrome */
+@import 'chrome/base';
+/* Views */
+@import 'view/home';

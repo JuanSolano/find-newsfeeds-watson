@@ -1,0 +1,23 @@
+/*
+  HOME
+  Find NewsFeed Watson
+  Author: JB
+  */
+
+// sass-lint:disable no-empty-rulesets
+// sass-lint:disable indentation
+// sass-lint:disable empty-line-between-blocks
+// sass-lint:disable no-color-literals
+
+#root{
+  padding: 20px 0;
+}
+
+.steps{
+  > ul{
+    margin-top: 10px;
+    > li{
+      margin-bottom: 10px;
+    }
+  }
+}

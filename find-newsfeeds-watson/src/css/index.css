@@ -1,0 +1,195 @@
+/*
+  INITIAL INDEX SCSS CONFIG
+  Find NewsFeed Watson
+  Author: JB
+  */
+/* utilities */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+/* config */
+/*
+  Hex-Color
+  project: Find NewsFeed Watson
+  author: JB
+ */
+/*
+  Typography
+  project: Find NewsFeed Watson
+  author: JB
+ */
+p, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0; }
+
+p {
+  font-size: 16px; }
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 20px; }
+
+h4 {
+  font-size: 18px; }
+
+/* Chrome */
+/*
+  CHROME
+  project: Find NewsFeed Watson
+  author: JB
+*/
+/*
+  LAYOUT
+  project: Find NewsFeed Watson
+  author: JB
+ */
+html {
+  box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6rem;
+  position: relative; }
+
+header, .header {
+  background-color: #000;
+  color: #fff;
+  display: block;
+  padding: 1rem;
+  width: 100%; }
+
+footer, .footer {
+  background-color: #000;
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 0; }
+
+.wrapper {
+  width: 100%; }
+  .wrapper-content {
+    margin: 20px auto;
+    width: 95%; }
+
+/*
+  Header
+  project: Find NewsFeed Watson
+  author: JB
+ */
+header, .header {
+  height: 100px; }
+  header-title, .header-title {
+    font-size: 45px; }
+
+/*
+  Footer
+  project: Find NewsFeed Watson
+  author: JB
+ */
+/* Views */
+/*
+  HOME
+  Find NewsFeed Watson
+  Author: JB
+  */
+#root {
+  padding: 20px 0; }
+
+.steps > ul {
+  margin-top: 10px; }
+  .steps > ul > li {
+    margin-bottom: 10px; }

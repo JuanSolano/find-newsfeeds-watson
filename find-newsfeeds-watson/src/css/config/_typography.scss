@@ -1,0 +1,36 @@
+/*
+  Typography
+  project: Find NewsFeed Watson
+  author: JB
+ */
+
+// sass-lint:disable no-empty-rulesets
+// sass-lint:disable indentation
+// sass-lint:disable empty-line-between-blocks
+// sass-lint:disable no-color-literals
+
+p,h1,h2,h3,h4{
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  font-size: 16px;
+
+}
+h1{
+  font-size: 30px;
+
+}
+h2{
+  font-size: 24px;
+
+}
+h3{
+  font-size: 20px;
+
+}
+h4{
+  font-size: 18px;
+
+}

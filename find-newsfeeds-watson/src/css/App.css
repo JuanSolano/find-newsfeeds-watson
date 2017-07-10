@@ -1,0 +1,45 @@
+/*
+  INITIAL APP SCSS CONFIG
+  Find NewsFeed Watson
+  Author: JB
+  */
+/* config */
+/*
+  Global
+  Find NewsFeed Watson
+  Author: JB
+  */
+/*
+  Hex-Color
+  project: Find NewsFeed Watson
+  author: JB
+ */
+/* MODULES */
+/*
+  NewsFeed Module
+  Find NewsFeed Watson
+  Author: JB
+  */
+.newsFeed .icon-line {
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  margin: 10px;
+  width: 50px; }
+  .newsFeed .icon-line::before {
+    content: url("../img/icons-demo.jpg");
+    position: relative; }
+
+.newsFeed .input-line {
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+  width: 40%; }
+  .newsFeed .input-line input {
+    font-size: 12px;
+    height: 50px;
+    padding: 0 10px;
+    width: 100%; }
+
+.newsFeed .server-response {
+  margin: 20px 2px 0; }
