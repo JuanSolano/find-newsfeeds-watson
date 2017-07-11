@@ -22,6 +22,8 @@ class ServerResponse extends Component {
 
     newsFeedList.forEach((val, key)=>{
 
+      try {
+
         let news = {
           date: val.created_at,
           content: val.text,
@@ -29,6 +31,12 @@ class ServerResponse extends Component {
         }
 
         newsFeed.push(news);
+
+      } catch (e) {
+
+        console.warn( "Some of the tweets doesn't have link." );
+      }
+
     });
 
     this.setState({

@@ -80,6 +80,9 @@ app.post('/api/tweets/', function(req, res) {
   //
   twClient.get('search/tweets', {q: req.body.search }, function(error, tweets, response) {
 
+    // DEBUG
+    //console.log(tweets);
+
     if (error) {
       return res.status(error.code || 500).json(error);
     }
