@@ -28,7 +28,7 @@ class Input extends Component {
       TODO: go an inspect all the nodes visited returned;
       */
       let nodesVisited = response.output.nodes_visited;
-      if( nodesVisited[0] == "busqueda" ) {
+      if( nodesVisited[0] === "busqueda" ) {
         this.sendToSearch( response.input );
       }
   }

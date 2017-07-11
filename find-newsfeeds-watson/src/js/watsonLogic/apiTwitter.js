@@ -11,8 +11,6 @@ var ApiTwitter = (function() {
   let endPointUrl = "http://localhost:8000/api/";
   let message = endPointUrl + "tweets/";
 
-  let oo = Promise.resolve( twitterResponse );
-
   // Publicly accessible methods defined
   return {
     //

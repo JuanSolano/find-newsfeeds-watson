@@ -1,6 +1,3 @@
-import ServerResponse from '../components/ServerResponse';
-
-
 var Api = (function() {
   var requestPayload;
   var responsePayload;
