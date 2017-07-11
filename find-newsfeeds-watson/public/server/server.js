@@ -1,3 +1,9 @@
+/*
+  Twitter
+  Find NewsFeed Watson
+  Author: JB
+  */
+  
 'use strict';
 
 require('dotenv').config({silent: true});

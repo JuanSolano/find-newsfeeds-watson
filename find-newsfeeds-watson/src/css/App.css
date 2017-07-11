@@ -43,3 +43,11 @@
 
 .newsFeed .server-response {
   margin: 20px 2px 0; }
+  .newsFeed .server-response > ul > li {
+    background-color: #f3ebe9;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px; }
+  .newsFeed .server-response .newTitle {
+    font-size: 20px;
+    margin-bottom: 10px; }

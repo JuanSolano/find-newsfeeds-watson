@@ -17,6 +17,9 @@ class App extends Component {
         <div className="input-line">
           <Input />
         </div>
+        <div className="server-response">
+          <ServerResponse />
+        </div>
       </div>
     );
   }

@@ -48,6 +48,13 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    text-decoration: none;
+    color: #000;
+
+    &:visited,
+    &:hover{
+      color: #000;
+    }
 }
 
 /* change colours to suit your needs */

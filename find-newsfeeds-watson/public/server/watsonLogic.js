@@ -1,8 +1,15 @@
+/*
+  WatsonLogic
+  Find NewsFeed Watson
+  Author: JB
+  */
+
 'use strict';
 
 let express = require('express');
 let bodyParser = require('body-parser');
 let Conversation = require('watson-developer-cloud/conversation/v1');
+var Twitter = require('twitter');
 //
 let workspace_id = '018e1c94-d1ac-4842-8a80-cc988831ec62';
 let username = '17378256-345f-4dee-97c3-1ce9467a4d90';
@@ -21,6 +28,18 @@ var conversation = new Conversation({
   "password": password,
   "path": { workspace_id: workspace_id },
   "version_date": '2016-07-11'
+});
+
+// Create the service
+/*
+  TODO:
+  Separate this logic
+*/
+var twClient = new Twitter({
+  consumer_key: 'LzWi15n0eDDxeC1YiT3hSjIAR',
+  consumer_secret: 's7G56660y4CYQNCjwOMrbQiQpjbsyGiY3gh23AM4B375i37vcu',
+  access_token_key: '76488191-HEuovX0ERd4NW4K3kPLvAsVA7P344j6pVnkFRayIy',
+  access_token_secret: 'MaqBBjWedhI5BlLTEQZiZk8ViPkHaoN9wryOlNxkNjPXX'
 });
 
 /*
@@ -50,6 +69,24 @@ app.post('/api/message/', function(req, res) {
   sendMessageToWatson( watsonDataRequest, req, res );
 });
 
+// Twitter Endpoint
+app.post('/api/tweets/', function(req, res) {
+
+  /*
+  TODO:
+  Check if user search params was received
+  */
+
+  //
+  twClient.get('search/tweets', {q: req.body.search }, function(error, tweets, response) {
+
+    if (error) {
+      return res.status(error.code || 500).json(error);
+    }
+    return res.json( tweets );
+  });
+});
+
 /**
   sendMessageToWatson
   * @param  {Object} watsonDataRequest
@@ -59,8 +96,8 @@ app.post('/api/message/', function(req, res) {
 */
 function sendMessageToWatson( watsonDataRequest, req, res ){
   //DEBUG
-  //console.log("watsonDataRequest: ********************************");
-  //console.log(watsonDataRequest);
+  // console.log("watsonDataRequest: ********************************");
+  // console.log(watsonDataRequest);
 
   // Send the input to the conversation service
   conversation.message( watsonDataRequest, function(err, data) {

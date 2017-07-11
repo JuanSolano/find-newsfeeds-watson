@@ -37,5 +37,16 @@
   }
   .server-response{
     margin: 20px 2px 0;
+
+    > ul > li{
+      background-color: $gray-light;
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+    .newTitle{
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
   }
 }
