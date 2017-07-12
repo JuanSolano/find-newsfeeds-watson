@@ -43,11 +43,18 @@
 
 .newsFeed .server-response {
   margin: 20px 2px 0; }
-  .newsFeed .server-response > ul > li {
-    background-color: #f3ebe9;
-    display: inline-block;
-    margin-bottom: 10px;
+  .newsFeed .server-response .watson-says {
+    background-color: darkorange;
+    margin-right: 10px;
     padding: 10px; }
+  .newsFeed .server-response .newsfeed-list {
+    margin: 20px 2px 0; }
+    .newsFeed .server-response .newsfeed-list > ul > li {
+      background-color: #f3ebe9;
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 100%; }
   .newsFeed .server-response .newTitle {
     font-size: 20px;
     margin-bottom: 10px; }

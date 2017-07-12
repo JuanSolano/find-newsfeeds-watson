@@ -1,17 +1,26 @@
 /*
-  Twitter
+  Nodejs server
   Find NewsFeed Watson
   Author: JB
   */
-  
+
+/*
+server ( express )
+
+dotenv
+PORT=8000 node server
+*/
 'use strict';
 
-require('dotenv').config({silent: true});
+require('dotenv').config({
+  silent: true
+});
 
-var server = require('./watsonLogic');
-var port = process.env.PORT || process.env.VCAP_APP_PORT || 8000;
+const server = require('./serverLogic');
+const defaultPort = 8000;
+const port = process.env.PORT || defaultPort;
 
 server.listen(port, function() {
-  // eslint-disable-next-line
+
   console.log('Server ready : port: %d', port);
 });

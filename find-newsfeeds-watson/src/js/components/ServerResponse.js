@@ -1,22 +1,74 @@
 import React, { Component } from 'react';
 import ApiTwitter from '../watsonLogic/apiTwitter';
+import ApiWatson from '../watsonLogic/apiWatson';
 
 class ServerResponse extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      newsFeed: []
+      newsFeed: [],
+      watsonMessage: ""
     };
 
-    //
-    ApiTwitter.newContentCall( (param) => {
+    // Twitter response update
+    ApiTwitter.newContentCall( (twitterServerResponse) => {
 
-      this.updateMessage( param.statuses );
+      let query={};
+      let twitts=[];
+
+      // DEBUG
+      console.log( "twitterServerResponse:" );
+      console.log( twitterServerResponse );
+
+      try {
+
+        query = twitterServerResponse.search_metadata.query;
+        twitts = twitterServerResponse.statuses;
+
+      } catch (e) {
+
+        console.log( twitterServerResponse );
+      }
+
+
+
+      /**/
+      if( twitts.length > 0 ){
+
+        console.log( "Call ApiWatson.sendRequest(news_found);" );
+        ApiWatson.sendRequest("newsFound");
+
+        /**/
+        this.showNewsFeed( twitts );
+      } else {
+
+        console.log( "Call ApiWatson.sendRequest(no_news_found);" );
+        ApiWatson.sendRequest("notFound");
+
+        /**/
+        this.noNewsFeedToShow();
+      }
+    });
+
+    // Watson response update
+    ApiWatson.newContentCall( () => {
+
+      let serverResponse = ApiWatson.getResponse();
+      let nodes_visited = serverResponse.output.nodes_visited[0];
+      let text = serverResponse.output.text[0];
+
+      // DEBUG
+      console.log( 'ApiWatson response:' );
+      console.log( ApiWatson.getResponse() );
+
+      //
+      this.updateWatsonMessage (text);
     });
   }
 
-  updateMessage( newsFeedList ) {
+  /**/
+  showNewsFeed( newsFeedList ) {
 
     let newsFeed = [];
 
@@ -44,12 +96,29 @@ class ServerResponse extends Component {
     });
   }
 
+  /**/
+  noNewsFeedToShow ( query ){
+
+    this.setState({
+      newsFeed: []
+    });
+  }
+
+  // Update Watson message
+  updateWatsonMessage = (message)=>{
+    this.setState({
+      watsonMessage: message
+    });
+  }
+
   //buscar noticias de corea del norte
 
   render(){
+
     function NewsBuilder(props){
-      const newsFeed = props.news;
-      const listItems = newsFeed.map( (news, index) => {
+
+      /**/
+      const listItems = props.news.map( (news, index) => {
         return (
           <li key={index}>
             <a href={news.url} target="_new">
@@ -68,8 +137,14 @@ class ServerResponse extends Component {
     }
 
     return(
+      <div className="content-wrapper">
 
-      <NewsBuilder news={this.state.newsFeed} />
+        <p> <span className="watson-says">Watson says: </span> {this.state.watsonMessage}</p>
+
+        <div className="newsfeed-list">
+          <NewsBuilder news={this.state.newsFeed} />
+        </div>
+      </div>
     )
   };
 }

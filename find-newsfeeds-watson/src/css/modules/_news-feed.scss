@@ -38,12 +38,24 @@
   .server-response{
     margin: 20px 2px 0;
 
-    > ul > li{
-      background-color: $gray-light;
-      display: inline-block;
-      margin-bottom: 10px;
+    .watson-says{
+      background-color: darkorange;
+      margin-right: 10px;
       padding: 10px;
     }
+
+    .newsfeed-list{
+      margin: 20px 2px 0;
+
+      > ul > li{
+        background-color: $gray-light;
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 100%;
+      }
+    }
+
     .newTitle{
       font-size: 20px;
       margin-bottom: 10px;

@@ -1,40 +1,32 @@
 import React, { Component } from 'react';
-import Api from './watsonLogic/api';
+import ApiWatson from './watsonLogic/apiWatson';
 
 class Status extends Component {
   constructor () {
     super();
+
+    let status;
+    let response;
 
     this.state = {
       val: ":: > Waiting for Watson server"
     };
 
     // React promise callback
-    Api.contactWatson().then((value) => {
+    ApiWatson.contactWatson().then((value) => {
 
-      let status;
-      let response = Api.getResponsePayload().output.text[0];
+      try {
+        // if watson respond. All good
+        response = ApiWatson.getResponse().output.text[0];
+        status = ":: > Watson server ready.";
 
-      if( response === "watson:ready" ){
-
-        status = ":: > Watson server is listening now.";
-      } else {
-
-        status = "Please check the server."
+        this.setState({
+          val: status
+        })
+      } catch (e) {
+        console.log( " ApiWatson.getResponsePayload() : output not defined : empty message" );
       }
-
-      this.setState({
-        val: status
-      })
     })
-  }
-
-  // Execute on component is mount
-  componentDidMount(){
-
-    // Contact Watson server
-    // Initial call
-    Api.contactWatson();
   }
 
   render() {

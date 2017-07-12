@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Api from '../watsonLogic/api';
+import ApiWatson from '../watsonLogic/apiWatson';
 import ApiTwitter from '../watsonLogic/apiTwitter';
 
 class Input extends Component {
@@ -7,8 +7,7 @@ class Input extends Component {
   constructor(){
     super();
     this.state = {
-      value: '',
-      watsonMessage: ''
+      value: ''
     };
 
     this.inputChange = this.inputChange.bind(this);
@@ -16,13 +15,12 @@ class Input extends Component {
     this.newMessageFromWatson = this.newMessageFromWatson.bind(this);
   }
 
+  /*
+  newMessageFromWatson
+  */
   newMessageFromWatson() {
 
-      let response = Api.getResponsePayload();
-
-      this.setState({
-        watsonMessage: response.output.text[0]
-      });
+      let response = ApiWatson.getResponse();
 
       /*
       TODO: go an inspect all the nodes visited returned;
@@ -33,6 +31,9 @@ class Input extends Component {
       }
   }
 
+  /*
+  sendToSearch
+  */
   sendToSearch( params ){
 
       /*
@@ -58,15 +59,10 @@ class Input extends Component {
   formSubmit(event) {
     event.preventDefault();
 
-    let context;
-    let inputVal = this.state.value;
-    let latestResponse = Api.getResponsePayload();
-    if (latestResponse) {
-      context = latestResponse.context;
-    }
+    let inputVal = this.state.value;  
 
     // Send the user message
-    Api.sendRequest(inputVal, context).then( ( http ) => {
+    ApiWatson.sendRequest(inputVal).then( ( http ) => {
 
       this.newMessageFromWatson();
     });
@@ -76,14 +72,9 @@ class Input extends Component {
 
     return(
 
-      <div>
-        <form onSubmit={this.formSubmit}>
-          <input type="text" value={this.state.value} onChange={this.inputChange} />
-          <div className="server-response">
-            <p>{this.state.watsonMessage}</p>
-          </div>
-        </form>
-      </div>
+      <form onSubmit={this.formSubmit}>
+        <input type="text" value={this.state.value} onChange={this.inputChange} />
+      </form>
     );
   };
 }

@@ -3,17 +3,18 @@
   Find NewsFeed Watson
   Author: JB
   */
-
+import Config from "./config";
 var ApiTwitter = (function() {
 
+  /**/
   let twitterResponse;
   let contentCallFN;
-  let endPointUrl = "http://localhost:8000/api/";
-  let message = endPointUrl + "tweets/";
+  const endPointUrl = "http://localhost:8000/api/";
+  const message = endPointUrl + "tweets/";
 
-  // Publicly accessible methods defined
+  /* Public methods */
   return {
-    //
+    // Global request to Twitter server
     sendRequest: sendRequest,
     //
     getTwitterResponse: function() {
@@ -30,7 +31,7 @@ var ApiTwitter = (function() {
 
   /**
    * sendRequest
-   * Send a message request to the server
+   * Send a string request to the server
    */
   function sendRequest(param) {
 
@@ -42,7 +43,7 @@ var ApiTwitter = (function() {
     searchRequest = JSON.stringify(searchParams);
     request = xhrWatsonRequest( searchRequest );
 
-    //
+    // Request complete
     request.then( ( http ) => {
       // DEBUG
       //console.log( http.readyState, http.status, http.responseText );
