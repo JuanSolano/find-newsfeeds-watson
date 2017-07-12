@@ -1,3 +1,8 @@
+/*
+  Watson Server Response
+  Find NewsFeed Watson
+  Author: JB
+  */
 import React, { Component } from 'react';
 import ApiTwitter from '../watsonLogic/apiTwitter';
 import ApiWatson from '../watsonLogic/apiWatson';
@@ -18,8 +23,8 @@ class ServerResponse extends Component {
       let twitts=[];
 
       // DEBUG
-      console.log( "twitterServerResponse:" );
-      console.log( twitterServerResponse );
+      //console.log( "twitterServerResponse:" );
+      //console.log( twitterServerResponse );
 
       try {
 
@@ -31,19 +36,17 @@ class ServerResponse extends Component {
         console.log( twitterServerResponse );
       }
 
-
-
       /**/
       if( twitts.length > 0 ){
 
-        console.log( "Call ApiWatson.sendRequest(news_found);" );
+        //console.log( "Call ApiWatson.sendRequest(news_found);" );
         ApiWatson.sendRequest("newsFound");
 
         /**/
         this.showNewsFeed( twitts );
       } else {
 
-        console.log( "Call ApiWatson.sendRequest(no_news_found);" );
+        //console.log( "Call ApiWatson.sendRequest(no_news_found);" );
         ApiWatson.sendRequest("notFound");
 
         /**/
@@ -59,8 +62,8 @@ class ServerResponse extends Component {
       let text = serverResponse.output.text[0];
 
       // DEBUG
-      console.log( 'ApiWatson response:' );
-      console.log( ApiWatson.getResponse() );
+      //console.log( 'ApiWatson response:' );
+      //console.log( ApiWatson.getResponse() );
 
       //
       this.updateWatsonMessage (text);

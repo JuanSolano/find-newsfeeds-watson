@@ -1,3 +1,8 @@
+/*
+  Watson Status
+  Find NewsFeed Watson
+  Author: JB
+  */
 import React, { Component } from 'react';
 import ApiWatson from './watsonLogic/apiWatson';
 

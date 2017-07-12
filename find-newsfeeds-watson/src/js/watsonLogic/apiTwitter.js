@@ -3,12 +3,12 @@
   Find NewsFeed Watson
   Author: JB
   */
-import Config from "./config";
+//import Config from "./config";
 var ApiTwitter = (function() {
 
-  /**/
   let twitterResponse;
   let contentCallFN;
+  
   const endPointUrl = "http://localhost:8000/api/";
   const message = endPointUrl + "tweets/";
 

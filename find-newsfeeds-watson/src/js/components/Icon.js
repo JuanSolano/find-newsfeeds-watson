@@ -1,3 +1,8 @@
+/*
+  Watson Icons
+  Find NewsFeed Watson
+  Author: JB
+  */
 import React, { Component } from 'react';
 
 class Icon extends Component {

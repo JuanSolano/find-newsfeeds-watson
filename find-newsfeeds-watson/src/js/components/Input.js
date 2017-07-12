@@ -1,3 +1,8 @@
+/*
+  Watson Input
+  Find NewsFeed Watson
+  Author: JB
+  */
 import React, { Component } from 'react';
 import ApiWatson from '../watsonLogic/apiWatson';
 import ApiTwitter from '../watsonLogic/apiTwitter';
@@ -59,13 +64,19 @@ class Input extends Component {
   formSubmit(event) {
     event.preventDefault();
 
-    let inputVal = this.state.value;  
+    let inputVal = this.state.value;
 
     // Send the user message
-    ApiWatson.sendRequest(inputVal).then( ( http ) => {
+    if(inputVal.length > 0) {
+      ApiWatson.sendRequest(inputVal).then( ( http ) => {
 
-      this.newMessageFromWatson();
-    });
+        this.newMessageFromWatson();
+      });
+
+      this.setState({
+        value: ""
+      })
+    }
   }
 
   render(){

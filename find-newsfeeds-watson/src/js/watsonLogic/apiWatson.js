@@ -3,7 +3,7 @@
   Find NewsFeed Watson
   Author: JB
   */
-import Config from "./config";
+//import Config from "./config";
 var ApiWatson = (function() {
 
   let requestPayload;

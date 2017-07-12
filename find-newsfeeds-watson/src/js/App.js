@@ -1,5 +1,9 @@
+/*
+  Watson API
+  Find NewsFeed Watson
+  Author: JB
+  */
 import React, { Component } from 'react';
-// COMPONENTS
 import Input from './components/Input';
 import Icon from './components/Icon';
 import ServerResponse from './components/ServerResponse';
