@@ -18,7 +18,7 @@
     width: 50px;
 
     &::before{
-      content: url( $image-path + 'icons-demo.jpg');
+      content: url( $image-path + 'icons-demo-c.jpg');
       position: relative;
     }
   }

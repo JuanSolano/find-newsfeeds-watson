@@ -27,7 +27,7 @@
   margin: 10px;
   width: 50px; }
   .newsFeed .icon-line::before {
-    content: url("../img/icons-demo.jpg");
+    content: url("../img/icons-demo-c.jpg");
     position: relative; }
 
 .newsFeed .input-line {
