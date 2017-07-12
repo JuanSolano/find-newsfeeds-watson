@@ -19,6 +19,7 @@ class ServerResponse extends Component {
     // Twitter response update
     ApiTwitter.newContentCall( (twitterServerResponse) => {
 
+      // eslint-disable-next-line
       let query={};
       let twitts=[];
 
@@ -58,7 +59,7 @@ class ServerResponse extends Component {
     ApiWatson.newContentCall( () => {
 
       let serverResponse = ApiWatson.getResponse();
-      let nodes_visited = serverResponse.output.nodes_visited[0];
+      //let nodes_visited = serverResponse.output.nodes_visited[0];
       let text = serverResponse.output.text[0];
 
       // DEBUG

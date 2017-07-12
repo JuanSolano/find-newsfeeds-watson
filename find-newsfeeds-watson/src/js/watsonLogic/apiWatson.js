@@ -6,9 +6,6 @@
 //import Config from "./config";
 var ApiWatson = (function() {
 
-  let requestPayload;
-  let responsePayload;
-
   let request;
   let requestContext;
 
@@ -59,7 +56,6 @@ var ApiWatson = (function() {
    */
   function sendRequest(text) {
 
-    let params;
     let contextString;
     let contextObj = {};
     let context = ApiWatson.getResponseContext();

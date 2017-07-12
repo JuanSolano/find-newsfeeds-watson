@@ -11,6 +11,7 @@ class Status extends Component {
     super();
 
     let status;
+    // eslint-disable-next-line
     let response;
 
     this.state = {
